@@ -14,7 +14,7 @@ st.set_page_config(
 # Load the YOLO model
 @st.cache_resource
 def load_model():
-    return YOLO('/Users/hassaniftikhar4472/Downloads/hassan/pythonProject/streamlit/best.onnx', task='classify')
+    return YOLO('https://www.dropbox.com/scl/fi/uomn3tirx8add2s4u1v80/best.onnx?rlkey=hnu6pxbv517cqf1epefm7au3z&st=nntyhdns&dl=0', task='classify')
 
 model = load_model()
 
