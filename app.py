@@ -24,7 +24,7 @@ def set_bg_image():
         """
         <style>
         .stApp {
-            background-image: url("file:///Users/hassaniftikhar4472/Downloads/hassan/pythonProject/streamlit/logo.jpeg");
+            background-image: url("file:///https://github.com/Micro046/rice_leaf_disease_detection/blob/main/logo.jpeg");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
