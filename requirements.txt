@@ -2,3 +2,6 @@ streamlit
 ultralytics
 Pillow
 opencv-python
+requests
+onnx
+onnxruntime
