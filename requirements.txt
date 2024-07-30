@@ -1,6 +1,3 @@
 streamlit
 ultralytics
-os
-tempfile
-PIL
-python
+Pillow
