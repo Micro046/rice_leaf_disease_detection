@@ -87,5 +87,5 @@ if uploaded_file is not None:
                 top5_labels = [(label_names[idx], conf * 100) for idx, conf in zip(top5_indices, top5_confs)]
 
                 st.subheader("Prediction Results:")
-                st.success(f"**Top-1 Prediction:** {top1_label}")
+                st.success(f"**Prediction:** {top1_label}")
 
