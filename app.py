@@ -18,11 +18,12 @@ def load_model():
 
 model = load_model()
 
-def set_bg_image(opacity=0.4):
-  """Sets the background image with a specific opacity level.
+def set_bg_image(opacity=0.3, blur=5):
+  """Sets the background image with opacity and blur.
 
   Args:
-      opacity (float, optional): The opacity of the background image (0.0 to 1.0). Defaults to 0.5.
+      opacity (float, optional): The opacity of the background image (0.0 to 1.0). Defaults to 0.7.
+      blur (int, optional): The blur radius in pixels. Defaults to 5.
   """
   st.markdown(
       f"""
@@ -34,12 +35,15 @@ def set_bg_image(opacity=0.4):
           background-repeat: no-repeat;
           background-attachment: fixed;
           opacity: {opacity};
+          filter: blur({blur}px);
       }}
       </style>
       """,
       unsafe_allow_html=True
   )
-set_bg_image(opacity=0.4)
+
+# Set the background image with 70% opacity and a 5-pixel blur
+set_bg_image(opacity=0.3, blur=5)
 
 # Streamlit interface setup
 st.markdown("<h1 style='color: black; text-align: center;'>Rice Leaf Disease Classification</h1>", unsafe_allow_html=True)
