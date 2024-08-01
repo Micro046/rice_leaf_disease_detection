@@ -102,4 +102,4 @@ if uploaded_file is not None:
                 top1_label = label_names[top1_index]
 
                 st.markdown("<div class='prediction-result-header'><h3>Prediction Results:</h3></div>", unsafe_allow_html=True)
-                st.markdown(f"<p class='prediction-text'>**Prediction:** {top1_label} ({top1_conf:.2f}%)</p>", unsafe_allow_html=True)
+                st.markdown(f"<p class='prediction-text'>Prediction: {top1_label})</p>", unsafe_allow_html=True)
