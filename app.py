@@ -18,31 +18,36 @@ def load_model():
 
 model = load_model()
 
-def set_bg_color():
-    """Sets a solid background color."""
+def set_bg_gradient():
+    """Sets a gradient background color."""
     st.markdown(
         f"""
         <style>
         .stApp {{
-            background-color: #f0f2f6;
+            background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
+            color: white;
         }}
         h1 {{
-            color: #0073e6;
+            color: #FFD700;
             text-align: center;
+            font-family: 'Arial', sans-serif;
         }}
         .stTextInput > div > label {{
-            color: #0073e6;
+            color: #FFD700;
         }}
         .stImage {{
             border-radius: 10px;
+        }}
+        .stFileUploader label {{
+            color: white;
         }}
         </style>
         """,
         unsafe_allow_html=True
     )
 
-# Set the solid background color
-set_bg_color()
+# Set the gradient background
+set_bg_gradient()
 
 # Streamlit interface setup
 st.markdown("<h1>Rice Leaf Disease Classification</h1>", unsafe_allow_html=True)
@@ -93,4 +98,3 @@ if uploaded_file is not None:
 
                 st.subheader("Prediction Results:")
                 st.success(f"**Prediction:** {top1_label} ({top1_conf:.2f}%)")
-
