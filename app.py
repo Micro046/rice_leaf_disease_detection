@@ -57,14 +57,14 @@ def handle_uploaded_file(uploaded_file):
 with st.sidebar:
     st.header("Upload Image")
     uploaded_file = st.file_uploader("Choose an image", type=["jpg", "png"])
-    st.markdown("<hr style='border-top: 3px solid rgba(25,25,25,0.5);'>", unsafe_allow_html=True)
-    st.markdown("<h3 style='color: blue;'>Options:</h3>", unsafe_allow_html=True)
-    st.markdown("<ul style='color: green;'>"
-                "<li>About this app</li>"
-                "<li>Get Help</li>"
-                "<li>Report a Bug</li>"
-                "</ul>", unsafe_allow_html=True)
-    st.image("https://www.dropbox.com/scl/fi/9t0701yh6ckl7lrx4s6e0/logo.jpeg?rlkey=sbfgd12fgut0otwy6o86adol7&st=c8qbq2vy&dl=1", width=100)
+    # st.markdown("<hr style='border-top: 3px solid rgba(25,25,25,0.5);'>", unsafe_allow_html=True)
+    # st.markdown("<h3 style='color: blue;'>Options:</h3>", unsafe_allow_html=True)
+    # st.markdown("<ul style='color: green;'>"
+    #             "<li>About this app</li>"
+    #             "<li>Get Help</li>"
+    #             "<li>Report a Bug</li>"
+    #             "</ul>", unsafe_allow_html=True)
+    st.image("https://www.dropbox.com/scl/fi/9t0701yh6ckl7lrx4s6e0/logo.jpeg?rlkey=sbfgd12fgut0otwy6o86adol7&st=c8qbq2vy&dl=1", width=200)
 
 # Process the uploaded image
 if uploaded_file is not None:
