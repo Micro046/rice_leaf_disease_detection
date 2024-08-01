@@ -46,12 +46,12 @@ def set_bg_gradient():
             color: white;
             font-size: 1.2em;
         }}
-        .st-success {{
-            background-color: #1b1e23;
-            border-color: #4caf50;
+        .prediction-result-header {{
+            color: white;
         }}
-        .st-success p {{
-            color: #4caf50;
+        .prediction-text {{
+            color: #1E90FF; /* DodgerBlue */
+            font-weight: bold;
         }}
         </style>
         """,
@@ -101,6 +101,5 @@ if uploaded_file is not None:
 
                 top1_label = label_names[top1_index]
 
-                st.subheader("Prediction Results:")
-                st.success(f"**Prediction:** {top1_label})")
-
+                st.markdown("<div class='prediction-result-header'><h3>Prediction Results:</h3></div>", unsafe_allow_html=True)
+                st.markdown(f"<p class='prediction-text'>**Prediction:** {top1_label}</p>", unsafe_allow_html=True)
