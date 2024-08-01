@@ -19,28 +19,46 @@ def load_model():
 model = load_model()
 
 def set_bg_image():
-  """Sets the background image with opacity and blur.
-
-  st.markdown(
-      f"""
-      <style>
-      .stApp {{
-          background-image: url("https://www.dropbox.com/scl/fi/abvgojqfk3ega37z8hm8w/rice-7176354_1280.jpg?rlkey=kc0l2avwnadgc2lw44a1fu709&st=s2kd7gzj&dl=1");
-          background-size: cover;
-          background-position: center;
-          background-repeat: no-repeat;
-          background-attachment: fixed;
-      }}
-      </style>
-      """,
-      unsafe_allow_html=True
-  )
+    """Sets the background image with opacity and blur."""
+    st.markdown(
+        f"""
+        <style>
+        .stApp {{
+            background-image: url("https://www.dropbox.com/scl/fi/abvgojqfk3ega37z8hm8w/rice-7176354_1280.jpg?rlkey=kc0l2avwnadgc2lw44a1fu709&st=s2kd7gzj&dl=1");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            filter: blur(5px);
+            opacity: 0.7;
+        }}
+        h1 {{
+            color: #FFA500;
+            text-align: center;
+        }}
+        .stTextInput > div > label {{
+            color: #0073e6;
+        }}
+        .stImage {{
+            border-radius: 10px;
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
 
 # Set the background image with 70% opacity and a 5-pixel blur
 set_bg_image()
 
 # Streamlit interface setup
-st.markdown("<h1 style='color: orange; text-align: center;'>Rice Leaf Disease Classification</h1>", unsafe_allow_html=True)
+st.markdown("<h1>Rice Leaf Disease Classification</h1>", unsafe_allow_html=True)
+st.write(
+    """
+    This application utilizes a YOLO model to identify diseases in rice leaves. 
+    Upload an image to receive a classification result.
+    """,
+    unsafe_allow_html=True
+)
 
 # Function to handle image file upload and prediction
 def handle_uploaded_file(uploaded_file):
@@ -59,14 +77,7 @@ def handle_uploaded_file(uploaded_file):
 with st.sidebar:
     st.header("Upload Image")
     uploaded_file = st.file_uploader("Choose an image", type=["jpg", "png"])
-    # st.markdown("<hr style='border-top: 3px solid rgba(25,25,25,0.5);'>", unsafe_allow_html=True)
-    # st.markdown("<h3 style='color: blue;'>Options:</h3>", unsafe_allow_html=True)
-    # st.markdown("<ul style='color: green;'>"
-    #             "<li>About this app</li>"
-    #             "<li>Get Help</li>"
-    #             "<li>Report a Bug</li>"
-    #             "</ul>", unsafe_allow_html=True)
-    st.image("https://www.dropbox.com/scl/fi/9t0701yh6ckl7lrx4s6e0/logo.jpeg?rlkey=sbfgd12fgut0otwy6o86adol7&st=c8qbq2vy&dl=1", width=300)
+    st.image("https://www.dropbox.com/scl/fi/9t0701yh6ckl7lrx4s6e0/logo.jpeg?rlkey=sbfgd12fgut0otwy6o86adol7&st=c8qbq2vy&dl=1", width=200)
 
 # Process the uploaded image
 if uploaded_file is not None:
@@ -90,5 +101,8 @@ if uploaded_file is not None:
                 top5_labels = [(label_names[idx], conf * 100) for idx, conf in zip(top5_indices, top5_confs)]
 
                 st.subheader("Prediction Results:")
-                st.success(f"**Prediction:** {top1_label}")
+                st.success(f"**Prediction:** {top1_label} ({top1_conf:.2f}%)")
+                st.write("**Top 5 Predictions:**")
+                for label, conf in top5_labels:
+                    st.write(f"{label}: {conf:.2f}%")
 
