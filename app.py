@@ -18,24 +18,28 @@ def load_model():
 
 model = load_model()
 
-def set_bg_image():
-    # Adjust CSS to ensure the background image shows
-    st.markdown(
-        """
-        <style>
-        .stApp {
-            background-image: url("https://www.dropbox.com/scl/fi/abvgojqfk3ega37z8hm8w/rice-7176354_1280.jpg?rlkey=kc0l2avwnadgc2lw44a1fu709&st=s2kd7gzj&dl=1");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
+def set_bg_image(opacity=0.5):
+  """Sets the background image with a specific opacity level.
 
-set_bg_image()
+  Args:
+      opacity (float, optional): The opacity of the background image (0.0 to 1.0). Defaults to 0.5.
+  """
+  st.markdown(
+      f"""
+      <style>
+      .stApp {{
+          background-image: url("https://www.dropbox.com/scl/fi/abvgojqfk3ega37z8hm8w/rice-7176354_1280.jpg?rlkey=kc0l2avwnadgc2lw44a1fu709&st=s2kd7gzj&dl=1");
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          opacity: {opacity};
+      }}
+      </style>
+      """,
+      unsafe_allow_html=True
+  )
+set_bg_image(opacity=0.7)
 
 # Streamlit interface setup
 st.markdown("<h1 style='color: black; text-align: center;'>Rice Leaf Disease Classification</h1>", unsafe_allow_html=True)
