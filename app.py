@@ -38,7 +38,7 @@ def set_bg_image():
 set_bg_image()
 
 # Streamlit interface setup
-st.markdown("<h1 style='color: grey; text-align: center;'>Rice Leaf Disease Classification</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='color: black; text-align: center;'>Rice Leaf Disease Classification</h1>", unsafe_allow_html=True)
 
 # Function to handle image file upload and prediction
 def handle_uploaded_file(uploaded_file):
