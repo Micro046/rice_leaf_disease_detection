@@ -24,7 +24,7 @@ def set_bg_image():
         """
         <style>
         .stApp {
-            background-image: url("file:///https://www.dropbox.com/scl/fi/abvgojqfk3ega37z8hm8w/rice-7176354_1280.jpg?rlkey=kc0l2avwnadgc2lw44a1fu709&st=s2kd7gzj&dl=1");
+            background-image: url("https://www.dropbox.com/scl/fi/abvgojqfk3ega37z8hm8w/rice-7176354_1280.jpg?rlkey=kc0l2avwnadgc2lw44a1fu709&st=s2kd7gzj&dl=1");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
