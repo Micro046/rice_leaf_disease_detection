@@ -24,7 +24,7 @@ def set_bg_image():
         """
         <style>
         .stApp {
-            background-image: url("file:///https://github.com/Micro046/rice_leaf_disease_detection/blob/main/logo.jpeg");
+            background-image: url("file:///https://www.dropbox.com/scl/fi/9t0701yh6ckl7lrx4s6e0/logo.jpeg?rlkey=sbfgd12fgut0otwy6o86adol7&st=c8qbq2vy&dl=1");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -64,7 +64,7 @@ with st.sidebar:
                 "<li>Get Help</li>"
                 "<li>Report a Bug</li>"
                 "</ul>", unsafe_allow_html=True)
-    st.image("https://github.com/Micro046/rice_leaf_disease_detection/blob/main/logo.jpeg", width=100)
+    st.image("https://www.dropbox.com/scl/fi/9t0701yh6ckl7lrx4s6e0/logo.jpeg?rlkey=sbfgd12fgut0otwy6o86adol7&st=c8qbq2vy&dl=1", width=100)
 
 # Process the uploaded image
 if uploaded_file is not None:
