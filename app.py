@@ -29,7 +29,6 @@ def set_bg_image():
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
-            filter: blur(5px);
             opacity: 0.7;
         }}
         h1 {{
