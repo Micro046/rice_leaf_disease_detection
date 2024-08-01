@@ -18,13 +18,9 @@ def load_model():
 
 model = load_model()
 
-def set_bg_image(opacity=0.3, blur=5):
+def set_bg_image():
   """Sets the background image with opacity and blur.
 
-  Args:
-      opacity (float, optional): The opacity of the background image (0.0 to 1.0). Defaults to 0.7.
-      blur (int, optional): The blur radius in pixels. Defaults to 5.
-  """
   st.markdown(
       f"""
       <style>
@@ -44,7 +40,7 @@ def set_bg_image(opacity=0.3, blur=5):
 set_bg_image()
 
 # Streamlit interface setup
-st.markdown("<h1 style='color: black; text-align: center;'>Rice Leaf Disease Classification</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='color: orange; text-align: center;'>Rice Leaf Disease Classification</h1>", unsafe_allow_html=True)
 
 # Function to handle image file upload and prediction
 def handle_uploaded_file(uploaded_file):
