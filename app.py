@@ -64,6 +64,7 @@ with st.sidebar:
                 "<li>Get Help</li>"
                 "<li>Report a Bug</li>"
                 "</ul>", unsafe_allow_html=True)
+    st.image("https://github.com/Micro046/rice_leaf_disease_detection/blob/main/logo.jpeg", width=100)
 
 # Process the uploaded image
 if uploaded_file is not None:
