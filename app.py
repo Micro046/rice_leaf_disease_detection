@@ -24,7 +24,7 @@ def set_bg_image():
         """
         <style>
         .stApp {
-            background-image: url("file:///https://www.dropbox.com/scl/fi/9t0701yh6ckl7lrx4s6e0/logo.jpeg?rlkey=sbfgd12fgut0otwy6o86adol7&st=c8qbq2vy&dl=1");
+            background-image: url("file:///https://www.dropbox.com/scl/fi/abvgojqfk3ega37z8hm8w/rice-7176354_1280.jpg?rlkey=kc0l2avwnadgc2lw44a1fu709&st=s2kd7gzj&dl=1");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -64,7 +64,7 @@ with st.sidebar:
     #             "<li>Get Help</li>"
     #             "<li>Report a Bug</li>"
     #             "</ul>", unsafe_allow_html=True)
-    st.image("https://www.dropbox.com/scl/fi/9t0701yh6ckl7lrx4s6e0/logo.jpeg?rlkey=sbfgd12fgut0otwy6o86adol7&st=c8qbq2vy&dl=1", width=200)
+    st.image("https://www.dropbox.com/scl/fi/9t0701yh6ckl7lrx4s6e0/logo.jpeg?rlkey=sbfgd12fgut0otwy6o86adol7&st=c8qbq2vy&dl=1", width=400)
 
 # Process the uploaded image
 if uploaded_file is not None:
