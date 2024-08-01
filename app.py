@@ -64,7 +64,7 @@ with st.sidebar:
     #             "<li>Get Help</li>"
     #             "<li>Report a Bug</li>"
     #             "</ul>", unsafe_allow_html=True)
-    st.image("https://www.dropbox.com/scl/fi/9t0701yh6ckl7lrx4s6e0/logo.jpeg?rlkey=sbfgd12fgut0otwy6o86adol7&st=c8qbq2vy&dl=1", width=400)
+    st.image("https://www.dropbox.com/scl/fi/9t0701yh6ckl7lrx4s6e0/logo.jpeg?rlkey=sbfgd12fgut0otwy6o86adol7&st=c8qbq2vy&dl=1", width=300)
 
 # Process the uploaded image
 if uploaded_file is not None:
