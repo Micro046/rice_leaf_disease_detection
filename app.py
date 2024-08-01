@@ -34,8 +34,6 @@ def set_bg_image(opacity=0.3, blur=5):
           background-position: center;
           background-repeat: no-repeat;
           background-attachment: fixed;
-          opacity: {opacity};
-          filter: blur({blur}px);
       }}
       </style>
       """,
@@ -43,7 +41,7 @@ def set_bg_image(opacity=0.3, blur=5):
   )
 
 # Set the background image with 70% opacity and a 5-pixel blur
-set_bg_image(opacity=0.3, blur=5)
+set_bg_image()
 
 # Streamlit interface setup
 st.markdown("<h1 style='color: black; text-align: center;'>Rice Leaf Disease Classification</h1>", unsafe_allow_html=True)
