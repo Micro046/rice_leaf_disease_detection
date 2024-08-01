@@ -63,13 +63,6 @@ set_bg_gradient()
 
 # Streamlit interface setup
 st.markdown("<h1>Rice Leaf Disease Classification</h1>", unsafe_allow_html=True)
-st.write(
-    """
-    This application utilizes a YOLO model to identify diseases in rice leaves. 
-    Upload an image to receive a classification result.
-    """,
-    unsafe_allow_html=True
-)
 
 # Function to handle image file upload and prediction
 def handle_uploaded_file(uploaded_file):
