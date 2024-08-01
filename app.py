@@ -18,21 +18,16 @@ def load_model():
 
 model = load_model()
 
-def set_bg_image():
-    """Sets the background image with opacity and blur."""
+def set_bg_color():
+    """Sets a solid background color."""
     st.markdown(
         f"""
         <style>
         .stApp {{
-            background-image: url("https://www.dropbox.com/scl/fi/abvgojqfk3ega37z8hm8w/rice-7176354_1280.jpg?rlkey=kc0l2avwnadgc2lw44a1fu709&st=s2kd7gzj&dl=1");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            opacity: 0.7;
+            background-color: #f0f2f6;
         }}
         h1 {{
-            color: #FFA500;
+            color: #0073e6;
             text-align: center;
         }}
         .stTextInput > div > label {{
@@ -46,8 +41,8 @@ def set_bg_image():
         unsafe_allow_html=True
     )
 
-# Set the background image with 70% opacity and a 5-pixel blur
-set_bg_image()
+# Set the solid background color
+set_bg_color()
 
 # Streamlit interface setup
 st.markdown("<h1>Rice Leaf Disease Classification</h1>", unsafe_allow_html=True)
@@ -92,16 +87,10 @@ if uploaded_file is not None:
             if results:
                 top1_index = results[0].probs.top1
                 top1_conf = results[0].probs.top1conf * 100
-                top5_indices = results[0].probs.top5
-                top5_confs = results[0].probs.top5conf
                 label_names = results[0].names
 
                 top1_label = label_names[top1_index]
-                top5_labels = [(label_names[idx], conf * 100) for idx, conf in zip(top5_indices, top5_confs)]
 
                 st.subheader("Prediction Results:")
                 st.success(f"**Prediction:** {top1_label} ({top1_conf:.2f}%)")
-                st.write("**Top 5 Predictions:**")
-                for label, conf in top5_labels:
-                    st.write(f"{label}: {conf:.2f}%")
 
