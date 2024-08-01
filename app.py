@@ -24,13 +24,14 @@ def set_bg_gradient():
         f"""
         <style>
         .stApp {{
-            background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
+            background: linear-gradient(to bottom right, #283048, #859398);
             color: white;
         }}
         h1 {{
             color: #FFD700;
             text-align: center;
             font-family: 'Arial', sans-serif;
+            margin-bottom: 0;
         }}
         .stTextInput > div > label {{
             color: #FFD700;
@@ -40,6 +41,17 @@ def set_bg_gradient():
         }}
         .stFileUploader label {{
             color: white;
+        }}
+        .stMarkdown p {{
+            color: white;
+            font-size: 1.2em;
+        }}
+        .st-success {{
+            background-color: #1b1e23;
+            border-color: #4caf50;
+        }}
+        .st-success p {{
+            color: #4caf50;
         }}
         </style>
         """,
@@ -51,6 +63,13 @@ set_bg_gradient()
 
 # Streamlit interface setup
 st.markdown("<h1>Rice Leaf Disease Classification</h1>", unsafe_allow_html=True)
+st.write(
+    """
+    This application utilizes a YOLO model to identify diseases in rice leaves. 
+    Upload an image to receive a classification result.
+    """,
+    unsafe_allow_html=True
+)
 
 # Function to handle image file upload and prediction
 def handle_uploaded_file(uploaded_file):
@@ -90,4 +109,5 @@ if uploaded_file is not None:
                 top1_label = label_names[top1_index]
 
                 st.subheader("Prediction Results:")
-                st.success(f"**Prediction:** {top1_label}")
+                st.success(f"**Prediction:** {top1_label})")
+
