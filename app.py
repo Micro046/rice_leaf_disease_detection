@@ -18,39 +18,35 @@ def load_model():
 
 model = load_model()
 
-def set_bg_gradient():
-    """Sets a gradient background color."""
+def set_bg_color():
+    """Sets a solid background color."""
     st.markdown(
         f"""
         <style>
         .stApp {{
-            background: linear-gradient(to bottom right, #283048, #859398);
-            color: white;
+            background-color: #f0f2f6;
+            color: #333;
         }}
         h1 {{
-            color: #FFD700;
+            color: #333;
             text-align: center;
             font-family: 'Arial', sans-serif;
-            margin-bottom: 0;
         }}
         .stTextInput > div > label {{
-            color: #FFD700;
+            color: #333;
         }}
         .stImage {{
             border-radius: 10px;
         }}
         .stFileUploader label {{
-            color: white;
+            color: #333;
         }}
-        .stMarkdown p {{
-            color: white;
-            font-size: 1.2em;
-        }}
-        .prediction-result-header {{
-            color: white;
+        .stMarkdown h3 {{
+            color: #333;
+            font-weight: bold;
         }}
         .prediction-text {{
-            color: #1E90FF; /* DodgerBlue */
+            color: #0073e6; /* Blue */
             font-weight: bold;
         }}
         </style>
@@ -58,8 +54,8 @@ def set_bg_gradient():
         unsafe_allow_html=True
     )
 
-# Set the gradient background
-set_bg_gradient()
+# Set the solid background color
+set_bg_color()
 
 # Streamlit interface setup
 st.markdown("<h1>Rice Leaf Disease Classification</h1>", unsafe_allow_html=True)
@@ -101,5 +97,5 @@ if uploaded_file is not None:
 
                 top1_label = label_names[top1_index]
 
-                st.markdown("<div class='prediction-result-header'><h3>Prediction Results:</h3></div>", unsafe_allow_html=True)
-                st.markdown(f"<p class='prediction-text'>**Prediction:** {top1_label}</p>", unsafe_allow_html=True)
+                st.markdown("<h3>Prediction Results:</h3>", unsafe_allow_html=True)
+                st.markdown(f"<p class='prediction-text'>**Prediction:** {top1_label} ({top1_conf:.2f}%)</p>", unsafe_allow_html=True)
